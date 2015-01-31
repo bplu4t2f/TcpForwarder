@@ -162,7 +162,7 @@
 			this.Controls.Add(this.textBoxTargetPort);
 			this.Controls.Add(this.textBoxSourcePort);
 			this.Name = "Form1";
-			this.Text = "TCP Replicator";
+			this.Text = "TCP Forwarder";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
