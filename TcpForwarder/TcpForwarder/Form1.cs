@@ -100,6 +100,7 @@ namespace TcpForwarder
 				try
 				{
 					this.targetClient = new TcpClient();
+					this.targetClient.NoDelay = true;
 					var ar = this.targetClient.BeginConnect(targetIP, targetPort, null, null);
 					var success = ar.AsyncWaitHandle.WaitOne(500);
 					if (!success)
@@ -132,6 +133,7 @@ namespace TcpForwarder
 						return;
 					}
 					this.sourceClient = listener.EndAcceptTcpClient(ar);
+					this.sourceClient.NoDelay = true;
 					this.sourceStream = this.sourceClient.GetStream();
 					this.listener.Stop();
 
